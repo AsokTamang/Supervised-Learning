@@ -40,3 +40,12 @@ def gradient_descent(x,y,w_init,b_init,gradient,cost_function,alpha,iterations):
         w = w - (alpha * dj_dw)
         b = b - (alpha * dj_db)
     return w,b,loss_error,hist_iterations
+
+
+
+def normalize_data(x):
+    mu = np.mean(x,axis = 0)  #column wise calculation of mean
+    sigma = np.std(x,axis = 0) #column wise calculation of std
+    normalized =  (x-mu) / sigma
+    return normalized
+
